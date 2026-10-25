@@ -31,3 +31,7 @@ A small serverless layer (`api/*.ts`, as in RoadCam) for cached item data and mo
 ## Seasons
 
 Each item has an `event` (halloween, christmas, food-wine, special, icon) and an optional `window` (`MM-DD` to `MM-DD`, may wrap New Year). `src/season.ts` decides if an item is on the menu on a date; the Explore tab defaults to "on the menu now". Year-round items are admitted only as `icon` with rating >= `ICON_MIN_RATING` (tested).
+
+## Offline / PWA
+
+`public/sw.js` is a hand-written service worker (no plugin dependency). On install it precaches the page and the hashed JS/CSS it references; afterwards it serves same-origin GETs cache-first and refreshes in the background. `src/pwa.ts` registers it in production builds only. Cache matching uses `ignoreVary` on purpose: module scripts send an `Origin` header the precache fetch lacks, and a strict match leaves a blank page offline (there is a regression test). Bump `CACHE` in `sw.js` when its logic changes.
