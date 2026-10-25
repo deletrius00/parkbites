@@ -1,6 +1,7 @@
 import { FOODS, PARKS, EVENTS, EventKey, Food, verdict, trendLabel, distM, fmtDist, socialLinks } from './data';
 import { loadJournal, saveJournal, resizeImage, Entry } from './journal';
 import { makePostcard, caption } from './postcard';
+import { registerServiceWorker } from './pwa';
 import { seasonLabel, inSeason } from './season';
 import { runQuery, nearestPark as nearestParkFor, DwellTracker, Sort } from './query';
 
@@ -260,3 +261,4 @@ document.querySelectorAll<HTMLElement>('nav button').forEach(b => b.onclick = ()
 
 startLocation();
 render();
+void registerServiceWorker(navigator, import.meta.env.PROD);

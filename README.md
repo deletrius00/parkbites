@@ -6,6 +6,7 @@ Search the **special** food at Disneyland and Walt Disney World: Halloween, Chri
 - Links straight to Instagram, TikTok and the official Disney listing for that item
 - Filter by event and "on the menu now" (season windows are approximate; confirm dates in the official app)
 - Browse by park, by food place, top rated, must-eat, trending, cheapest, or **near me**
+- Works **offline** and installs to your home screen (PWA), since park signal is bad
 - A **food journal**: log what you ate, take a photo, rate it
 - One tap to turn a journal entry into a 1080×1920 post image plus caption, shared through your phone's share sheet to Instagram or TikTok
 
